@@ -226,5 +226,6 @@ h1{
 }
 
 .project-text {
-  width: 50%;
+  flex:1;
+  min-width: 300px;
 }
