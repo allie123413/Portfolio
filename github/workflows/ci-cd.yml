@@ -1,0 +1,39 @@
+name: Portfolio CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Test Cases
+      run: npm test
+
+    - name: Build Docker Image
+      run: docker build -t portfolio-website .
+
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    - name: Push Docker Image
+      run: |
+        docker tag portfolio-website username/portfolio-website:latest
+        docker push username/portfolio-website:latest
+
+    - name: Deploy to Docker Swarm
+      run: docker stack deploy -c docker-compose.yml portfolio

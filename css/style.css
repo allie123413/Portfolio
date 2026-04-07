@@ -1,0 +1,230 @@
+section{
+    padding:30px;
+    margin-top: 0px;
+}
+
+body{
+    margin: 0;
+    font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: black;
+    background: linear-gradient(to right,  #eef5f2 , #83c4b8 );
+}
+
+/*Index.html*/
+/* ===== Header ===== */
+.site-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px clamp(16px, 4vw, 40px);
+}
+
+.brand{
+    font-family: "Pacifico", cursive;
+    font-size: clamp(22px, 2.2vw, 28px);
+    color: #0f766e;
+    text-decoration: none;
+}
+
+.site-nav ul{
+    display: flex;
+    gap: clamp(14px, 3vw, 28px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.site-nav a{
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+.site-nav a::after{
+    content:"";
+    position:absolute; left:0; bottom:-6px;
+    width:0; height:2px; background: #0f766e;
+    transition: width .25s ease;
+}
+.site-nav a:hover::after, .site-nav a[aria-current="page"]::after{ width:100%; }
+
+/* ===== Hero ===== */
+.hero{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 clamp(16px, 4vw, 40px) clamp(16px, 6vw, 64px) 72px;
+}
+.hero-left img{
+    max-width: 100%;
+    height: auto;   /* prevent stretching */
+    display: block;
+}
+
+.intro{
+    margin: 0 0 10px;
+    color: #3f5b58;
+    font-weight: 600;
+    font-size:18px;
+    font-family: 'Pacifico', cursive;
+}
+
+h1{
+    margin: 0 0 14px;
+    font-size: clamp(28px, 4.2vw, 48px);
+    line-height: 1.18;
+    font-weight: 700;
+}
+.highlight{
+    color: #22a699;
+    -webkit-text-stroke: 1px #0b4d48;     /* outline */
+}
+ 
+.subtext{
+    margin: 0 0 22px;
+    color: #1b3a37;
+    max-width: 56ch;
+}
+
+.button{ 
+    display: flex; 
+    gap: 5px; 
+    flex-wrap: wrap; 
+}
+
+.btn{
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn.primary{
+    background: #0f766e;
+    color: white;
+}
+.btn.primary:hover{ background: #0e6b65; transform: translateY(-1px); }
+.btn.ghost{
+    color: #0f766e;
+    border: 2px solid #0f766e;
+    background: transparent;
+}
+.btn.ghost:hover{ background: rgba(15,118,110,.07);transform: translateY(-1px); }
+
+/*Event.html*/
+/* ===== Cards ===== */
+.cards h2{
+    margin: 0 0 16px;
+    font-size: clamp(22px, 3.6vw, 32px);
+    color: #0f1b1a;
+}
+
+/* Grid: 3 cards on desktop, 2 on tablet, 1 on mobile */
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* Card style */
+.card{
+    background: rgba(255,255,255,0.65);         /* soft on gradient */
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 14px;
+    overflow: hidden;                            /* round the image corners too */
+    display: flex;              
+    flex-direction: column; 
+}
+
+.card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(0,0,0,.10);
+}
+
+/* Card image */
+.card img{
+    display: block;
+    width: 100%;
+    height: 210px;           /* consistent card height */
+    object-fit:fill;       /* crops nicely to fill the area */
+}
+
+/* Card body */
+.card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 14px 14px;
+    flex: 1;  /* this makes body take remaining height */
+
+}
+
+.card-body h3{
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #0f766e;   
+}
+
+.card-body p{
+    margin: 0;
+    color: #1b3a37;
+    font-size: 14px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+}
+
+
+.card-body .btn.cert{
+  background: #0f766e;
+  color: white;
+  width: 150px;
+  margin-top: auto;           
+  align-self: flex-start;     /* keeps it left-aligned */
+}
+
+.card-body ul {
+  list-style: none;
+  padding-left: 0;
+}
+  
+.card-body li {
+  display: inline-block;
+  background: #c8ebe3;
+  color: #2c7a7b;
+  padding: 5px 10px;
+  margin: 4px 6px 0 0;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.card-body .takeaway {
+  display: inline-block;       /* makes it like a pill next to others */;
+  background: #c8ebe3;
+  color: #2c7a7b;
+  padding: 5px 10px;
+  margin: 4px 6px 0 0;         /* spacing between pills */
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.project-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-media {
+  width: 48%;
+  max-height: 500px;
+  object-fit: fill;
+  border-radius: 12px;
+}
+
+.project-text {
+  width: 50%;
+}
