@@ -125,14 +125,34 @@ h1{
     gap: 15px;
 }
 
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 16px;
+    height: 180px
+  }
+}
 /* Card style */
 .card{
-    background: rgba(255,255,255,0.65);         /* soft on gradient */
-    border: 1px solid rgba(0,0,0,0.06);
-    border-radius: 14px;
+    background: rgba(255,255,255,0.8);         /* soft on gradient */
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 20px;
+    padding: 15px;
     overflow: hidden;                            /* round the image corners too */
     display: flex;              
     flex-direction: column; 
+    gap:5px;
 }
 
 .card:hover{
@@ -141,11 +161,20 @@ h1{
 }
 
 /* Card image */
-.card img{
+.card-img{
     display: block;
     width: 100%;
-    height: 210px;           /* consistent card height */
-    object-fit:fill;       /* crops nicely to fill the area */
+    height: 200px;           /* consistent card height */
+    overflow: hidden;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
 }
 
 /* Card body */
