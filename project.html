@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body class="project-page">
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Alicia's Portfolio home">Alicia's Portfolio</a>
     <nav class="site-nav" aria-label="Primary">
@@ -24,10 +24,7 @@
 
 <section class="projects">
   <h2>Projects</h2>
-
-  <!-- Project 1 -->
   <div class="project-row">
-    <img src="images/ProjectCA1.png" alt="Drama Project" class="project-media">
     <div class="project-text">
       <h3>2025 — Drama Project</h3>
       <p>
@@ -36,11 +33,15 @@
       I also want to share my feelings about the drama and make some recommendation to everyone.
       </p>
       <p><strong>Skills:</strong> Creativity, Communication</p>
+      <a href="https://drama-app-3o6j.onrender.com/" target="_blank" class="btn btn-primary">
+      Live Demo
+      </a>
     </div>
+    <img src="images/ProjectCA1.png" alt="Drama Project" class="project-media">
+    
   </div>
 
-  <!-- Project 2 -->
-  <div class="project-row reverse">
+  <div class="project-row">
     <div class="project-text">
       <h3>2025 — Food Ordering Web Application</h3>
       <p>
@@ -50,9 +51,15 @@
       <p><strong>Technologies:</strong> Node.js, Express, MySQL</p>
       <p><strong>Learning:</strong> Learned backend development, database integration, 
       and how to build real-world web applications.</p>
-      <p><em>Demo video (2x speed)</em></p>
+      <button onclick="openVideo()" class="btn btn-primary">
+        ▶ Watch Demo
+      </button>
+      <script>
+      function openVideo() {
+        window.open("NormalProject.mp4", "_blank");
+        }
+        </script>
     </div>
-
     <video controls class="project-media">
       <source src="ProjectCA2.MOV" type="video/mp4">
     </video>
@@ -60,7 +67,6 @@
 
   <!-- Project 3 -->
   <div class="project-row">
-    <img src="images/ProjectDevops.png" alt="Docker Project" class="project-media">
     <div class="project-text">
       <h3>2026 — Game Deployment with Docker</h3>
       <p>
@@ -70,6 +76,7 @@
       <p><strong>Technologies:</strong> Docker, Linux, GitHub workflows to automate deployment</p>
       <p><strong>Learning:</strong> Learned how applications run in containers and how to troubleshoot system issues.</p>
     </div>
+    <img src="images/ProjectDevops.png" alt="Docker Project" class="project-media">
   </div>
 </section>
 </body>
